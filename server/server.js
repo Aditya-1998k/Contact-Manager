@@ -1,6 +1,7 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const userController=require("./user/route/user");
+const contactController=require('./user/route/contact')
 const multer=require("multer")();
 
 const app=express();
@@ -29,3 +30,5 @@ app.get("/", (req, res)=>{
 })
 
 app.use("/user", userController)
+
+app.use("/contact", contactController)
