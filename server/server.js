@@ -3,6 +3,7 @@ const mongoose=require("mongoose");
 const userController=require("./user/route/user");
 const contactController=require('./user/route/contact')
 const multer=require("multer")();
+require("dotenv").config()
 
 const app=express();
 //creating server
