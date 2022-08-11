@@ -21,7 +21,7 @@ app.use(multer.array());
 
 //creating cluster
 mongoose.connect("mongodb+srv://aditya:aditya1234@contactmanager.xzijcly.mongodb.net/?retryWrites=true&w=majority",(data)=>{
-    console.log(data);
+    console.log("Connected with mongodb atals");
 }, (err)=>{
     console.log(err)
 })
@@ -31,5 +31,4 @@ app.get("/", (req, res)=>{
 })
 
 app.use("/user", userController)
-
 app.use("/contact", contactController)
