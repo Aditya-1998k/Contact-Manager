@@ -1,7 +1,6 @@
 const express=require("express");
 const dataModal=require("../modal/dataModal");
 
-
 const router=express.Router()
 
 router.get("/data",async (req,res)=>{
@@ -9,14 +8,14 @@ router.get("/data",async (req,res)=>{
        const result=await dataModal.find()
        res.send(result)
        console.log(result)
-    }
-    catch(err){
-        console.log(err)
-    }
-})
+    }catch(err){
+            console.log(err)
+        }
+ })
 
-router.post("/data",(req,res)=>{
-    dataModal.create({name:req.body.name,
+router.post("/add",(req,res)=>{
+    dataModal.create({
+                    name:req.body.name,
                     designation:req.body.designation,
                     company:req.body.company,
                     industry:req.body.industry,
@@ -25,7 +24,6 @@ router.post("/data",(req,res)=>{
                     country:req.body.country,
                 }).then((data)=>{
                     res.status(200).send("data added successfully")
-                    console.log(data)
                 }).catch((err)=>{
                     res.send(err)
                 })
