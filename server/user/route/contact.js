@@ -11,9 +11,8 @@ router.get("/data",async (req,res)=>{
     }catch(err){
             console.log(err)
         }
- })
+})
 
-<<<<<<< HEAD
 router.get("/searched",async (req,res)=>{
     try{
         const searched=await dataModal.find({name:req.body.name})
@@ -25,13 +24,9 @@ router.get("/searched",async (req,res)=>{
     }
 })
 
-router.post("/data",(req,res)=>{
-    dataModal.create({name:req.body.name,
-=======
 router.post("/add",(req,res)=>{
     dataModal.create({
                     name:req.body.name,
->>>>>>> f5964d28dc2f5039c37b685ed7153642bfc666ef
                     designation:req.body.designation,
                     company:req.body.company,
                     industry:req.body.industry,
