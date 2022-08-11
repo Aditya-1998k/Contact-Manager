@@ -24,7 +24,7 @@ router.get("/searched",async (req,res)=>{
     }
 })
 
-router.post("/add",(req,res)=>{
+router.post("/data",(req,res)=>{
     dataModal.create({
                     name:req.body.name,
                     designation:req.body.designation,
@@ -40,6 +40,14 @@ router.post("/add",(req,res)=>{
                 })
 })
 
+const deleteContact=async (_id)=>{
+    try{
+        const result=await dataModal.deleteOne({_id});
+        console.log(result);
+    }catch(err){
+        console.log(err);
+    }
+}
 router.delete("/remove/:id", (req, res)=>{
     dataModal.deleteOne({id:req.params._id}).then(()=>{
         res.status(200).send("Removed from contact")
@@ -47,5 +55,4 @@ router.delete("/remove/:id", (req, res)=>{
         res.status(400).send(err)
     })
 })
-
 module.exports=router
