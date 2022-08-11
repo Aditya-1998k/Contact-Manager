@@ -15,6 +15,17 @@ router.get("/data",async (req,res)=>{
     }
 })
 
+router.get("/searched",async (req,res)=>{
+    try{
+        const searched=await dataModal.find({name:req.body.name})
+        res.send(searched)
+        console.log(searched)
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 router.post("/data",(req,res)=>{
     dataModal.create({name:req.body.name,
                     designation:req.body.designation,
