@@ -48,12 +48,11 @@ const deleteContact=async (_id)=>{
         console.log(err);
     }
 }
-router.get("/remove", (req, res)=>{
-    dataModal.delete({_id:req.body._id}).then(()=>{
+router.delete("/remove/:id", (req, res)=>{
+    dataModal.deleteOne({id:req.params._id}).then(()=>{
         res.status(200).send("Removed from contact")
     }).catch((err)=>{
         res.status(400).send(err)
     })
 })
-
 module.exports=router
