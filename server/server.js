@@ -3,7 +3,8 @@ const mongoose=require("mongoose");
 const userController=require("./user/route/user");
 const contactController=require('./user/route/contact')
 const multer=require("multer")();
-require("dotenv").config()
+require("dotenv").config();
+const cors=require("cors");
 
 const app=express();
 //creating server
@@ -14,7 +15,7 @@ app.listen(3001, (err)=>{
         console.log(err)
     }
 })
-
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(multer.array());
