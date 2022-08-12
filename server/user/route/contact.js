@@ -3,7 +3,7 @@ const dataModal=require("../modal/dataModal");
 
 const router=express.Router()
 
-router.get("/data",async (req,res)=>{
+router.get("/get",async (req,res)=>{
     try{
        const result=await dataModal.find()
        res.send(result)

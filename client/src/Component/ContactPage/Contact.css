@@ -1,0 +1,15 @@
+svg{
+    margin: 4px;
+}
+thead{
+    margin: 5px;
+    background-color: lightblue;
+    height: 30px;
+    margin-bottom: 10px;
+}
+th{
+    margin: 4px;
+}
+td{
+    margin: 4px;
+}

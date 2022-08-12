@@ -1,0 +1,27 @@
+.main-page{
+    width: 100vw;
+    height: 100vh;
+}
+.sidebar,.content-part{
+    display: block;
+    float: left;
+}
+.sidebar{
+    width: 15vw;
+    background-color: lightgrey;
+    height: 100%;
+}
+.content-part{
+    width: 85vw;
+}
+.nav-part,.contact-part{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.nav-part{
+    height: 10vh;
+}
+.contact-part{
+    height: 89vh;
+}
