@@ -4,10 +4,14 @@ import "./Contact.css"
 
 function Contact() {
     const [contact, setContact]=useState([]);
+    const authToken=localStorage.getItem("authToken")
     useEffect(()=> {
       axios({
           method:"GET",
-          url: "http://localhost:3001/contact/get"
+          url: "http://localhost:3001/contact/get",
+          headers:{
+            authorization:authToken
+          }
       }).then((res)=> {
           console.log(res);
           setContact(res.data)

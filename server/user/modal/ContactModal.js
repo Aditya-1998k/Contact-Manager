@@ -1,6 +1,7 @@
 const mongoose=require("mongoose")
 
 const dataSchema=new mongoose.Schema({
+    user_email:String,
     name:{
         type:String,
         required:true,
@@ -19,13 +20,11 @@ const dataSchema=new mongoose.Schema({
     },
     email:{
         type:String,
-        required:true,
-        unique:true
+        required:true
     },
     phonenumber:{
         type:Number,
-        required:true,
-        maxLength:10
+        required:true
     },
     country:{
         type:String,
@@ -33,5 +32,5 @@ const dataSchema=new mongoose.Schema({
     }
 })
 
-const dataModal=new mongoose.model("data",dataSchema)
-module.exports=dataModal
+const ContactModal=new mongoose.model("contactData",dataSchema)
+module.exports=ContactModal
