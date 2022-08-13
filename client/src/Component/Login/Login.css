@@ -1,0 +1,33 @@
+.login-main{    
+    width: 100vw;
+    height: 100vh;
+    padding: 80px 20px 40px 60px;
+    background-color:#F5F5F5;
+    border-radius: 5px;
+}
+.login-middle{
+    position: relative;
+    align-items: center;
+    left: 80px;
+    width: 80vw;
+    height: 80vh;
+    padding: 60px 160px 100px 160px;
+    background-color: #CEF3FF;
+    ;
+}
+.login-contact{
+    position: relative;
+    align-items: center;
+    text-align: center;
+    left: 80px;
+    width: 50vw;
+    height: 50vh;
+    padding: 20px 160px 80px 150px;
+    background-color:#CEF3FF;
+    ;
+}
+button{
+    width: 346px;
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,7 +1,15 @@
 import React from 'react';
-import "./Sidebar.css"
+import "./Sidebar.css";
+import {useNavigate} from "react-router-dom"
 
 function Sidebar() {
+
+  const Navigate=useNavigate();
+  const handleLogout=()=>{
+    localStorage.removeItem("authToken")
+    Navigate("/")
+  }
+
   return (
     <>  
         <div style={{marginTop:"10px",marginLeft:"10px", color:"blue"}}>
@@ -18,7 +26,7 @@ function Sidebar() {
         <button type="button" class="btn btn-light btn-lg" style={{width:"150px"}}>Total Contact</button>
         </div>
         <div style={{marginTop:"170%",marginLeft:"10px"}}>
-        <button type="button" class="btn btn-light btn-lg"  style={{width:"150px"}}>LOGOUT  </button>
+        <button type="button" class="btn btn-light btn-lg"  style={{width:"150px"}} onClick={()=>handleLogout()}>LOGOUT  </button>
         </div>
     </>
   )
