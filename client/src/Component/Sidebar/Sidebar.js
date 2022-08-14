@@ -26,6 +26,7 @@ function Sidebar() {
         <button type="button" class="btn btn-light btn-lg" style={{width:"150px"}}>Total Contact</button>
         </div>
         <div style={{marginTop:"170%",marginLeft:"10px"}}>
+          <hr></hr>
         <button type="button" class="btn btn-light btn-lg"  style={{width:"150px"}} onClick={()=>handleLogout()}>LOGOUT  </button>
         </div>
     </>

@@ -43,6 +43,16 @@ router.post("/login", (req, res)=>{
     }))
 })
 
+router.get("/get", async(req,res)=>{
+    try{
+        const user_email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
+       const result=await ContactModal.find({email:user_email})
+       res.send(result)
+       console.log(result)
+    }catch(err){
+            console.log(err)
+        }
+})
 //for user to logout we will do it in front end part
 //just need to delete authtoken from the where we have stored
 
