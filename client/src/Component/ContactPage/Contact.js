@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import "./Contact.css";
-import {Link} from "react-router-dom"
 
 function Contact() {
+
+    const [searchTerm, setSearchTerm]=useState("");
     const [contact, setContact]=useState([]);
     const [user, setuser]=useState()
     const authToken=localStorage.getItem("authToken")
@@ -48,12 +49,11 @@ function Contact() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link className="nav-link active" aria-current="page" to="/"></Link>
+            <h3>Total Contact</h3>
           </li>     
         </ul>
         <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit" style={{width:"70px",marginLeft:"5px"}}>Search</button>
+          <input  placeholder="Write Email To Search..." className="form-control me-2" type="search" aria-label="Search" onChange={(e)=>{setSearchTerm(e.target.value)}}/>
           <button className="btn btn-info" type="submit"style={{marginLeft:"5px"}} ><span><svg style={{marginLeft:"5px"}} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
           <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -75,7 +75,13 @@ function Contact() {
                   <th><strong>Country</strong></th>
                   <th><strong>Action</strong></th>
               </thead>
-              {contact.map((data)=>{
+              {contact.filter((val)=>{ 
+                if(val.email.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return val;
+                }else if(searchTerm===""){
+                  return val
+                }
+              }).map((data)=>{
                 return(
                   <>
                   <tbody style={{margin:"2px"}}>

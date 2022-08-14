@@ -7,12 +7,12 @@
     float: left;
 }
 .sidebar{
-    width: 15vw;
+    width: 18vw;
     background-color: lightgrey;
     height: 100%;
 }
 .content-part{
-    width: 85vw;
+    width: 82vw;
 }
 .nav-part,.contact-part{
     display: flex;
