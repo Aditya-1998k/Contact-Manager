@@ -13,3 +13,8 @@ th{
 td{
     margin: 4px;
 }
+span{
+    display: block;
+    float: left;
+    margin-left:3px;
+}

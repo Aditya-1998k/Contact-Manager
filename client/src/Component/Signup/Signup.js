@@ -22,7 +22,8 @@ function Signup() {
         console.log(res)
         Navigate("/")
       }).catch((err)=>{
-        console.log(err)
+        console.log(err);
+        alert(err,"user already exist")
       })
     }else{
       alert("password and confirm Password is different")
@@ -42,10 +43,10 @@ function Signup() {
               <input class="form-control" placeholder='Email' name='email' id='email' onChange={(e)=>handleInputchange(e,"email")}></input>
               </div>
               <div style={{margin:"10px"}}>
-                <input class="form-control" placeholder='Password' name='password' id='password' onChange={(e)=>handleInputchange(e,"password")}></input>
+                <input class="form-control" type="password" placeholder='Password' name='password' id='password' onChange={(e)=>handleInputchange(e,"password")}></input>
               </div>
               <div style={{margin:"10px"}}>
-                <input class="form-control" placeholder='Confirm Password' name='confirmpassword' id='confirmpassword' onChange={(e)=>handleInputchange(e,"confirmpassword")}></input>
+                <input class="form-control" type="password" placeholder='Confirm Password' name='confirmpassword' id='confirmpassword' onChange={(e)=>handleInputchange(e,"confirmpassword")}></input>
               </div>
               <div style={{margin:"10px",marginTop:"40px"}}>
               <button style={{textAlign:"center"}}  type="button" class="btn btn-primary" onClick={()=>handlesubmit()}><strong style={{textAlign:"center", position:"relative",left:"120px"}}>Signup</strong></button>

@@ -25,6 +25,7 @@ function Login() {
       Navigate("/contact")
     }).catch((err)=>{
       console.log(err)
+      alert(err,"Not a valid user")
     })
   }
   return (
@@ -37,10 +38,10 @@ function Login() {
                 <strong>Enter Your Credential to access your Account</strong>
               </div>
               <div style={{margin:"10px",marginTop:"30px"}}>
-              <input class="form-control" placeholder='Email' name='email' id='email' onChange={(e)=>handleInputchange(e,"email")}></input>
+              <input class="form-control"  placeholder='Email' name='email' id='email' onChange={(e)=>handleInputchange(e,"email")}></input>
               </div>
               <div style={{margin:"10px"}}>
-                <input class="form-control" placeholder='Password' name='password' id='password' onChange={(e)=>handleInputchange(e,"password")}></input>
+                <input class="form-control" type="password" placeholder='Password' name='password' id='password' onChange={(e)=>handleInputchange(e,"password")}></input>
               </div>
               <div style={{margin:"10px",marginTop:"40px"}}>
               <button style={{textAlign:"center"}}  type="button" class="btn btn-primary" onClick={()=>handleLogin()}><strong style={{textAlign:"center", position:"relative",left:"120px"}}>Login</strong></button>

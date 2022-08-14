@@ -27,8 +27,10 @@ router.post("/add", (req, res)=>{
 });
 
 
-router.delete("/remove/:id", (req, res)=>{
-    ContactModal.deleteOne({id:req.params._id}).then(()=>{
+router.post("/delete", (req, res)=>{
+    const id=req.body.id;
+    console.log(req.body.id)
+    ContactModal.findByIdAndDelete({_id:id}).then(()=>{
         res.status(200).send("Removed from contact")
     }).catch((err)=>{
         res.status(400).send(err)
