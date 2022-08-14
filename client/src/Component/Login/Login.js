@@ -25,7 +25,7 @@ function Login() {
       Navigate("/contact")
     }).catch((err)=>{
       console.log(err)
-      alert(err,"Not a valid user")
+      alert("Not a valid user")
     })
   }
   return (
