@@ -23,7 +23,7 @@ function Signup() {
         Navigate("/")
       }).catch((err)=>{
         console.log(err);
-        alert(err,"user already exist")
+        alert("user already exist")
       })
     }else{
       alert("password and confirm Password is different")
