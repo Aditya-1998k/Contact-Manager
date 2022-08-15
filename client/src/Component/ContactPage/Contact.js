@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import "./Contact.css";
+import {Link} from "react-router-dom";
 
 function Contact() {
 
@@ -114,7 +115,7 @@ function Contact() {
           </svg></span><span style={{marginLeft:"5px"}}>Delete</span></button>
           <button className="btn btn-secondary" type="submit"style={{marginLeft:"5px", width:"150px"}} ><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
           <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
-          </svg></span><span style={{marginLeft:"5px"}}>Import</span></button>
+          </svg></span><span style={{marginLeft:"5px"}}><Link style={{textDecoration:"none",color:"white"}} to="/import">Import</Link></span></button>
           <button className="btn btn-secondary" type="submit"style={{marginLeft:"5px", width:"150px"}} ><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-upload" viewBox="0 0 16 16">
           <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
           <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
@@ -127,7 +128,7 @@ function Contact() {
         <table className="table" style={{marginTop:"15px"}}>
               <thead className="table">
                 <tr>
-                  <th><input type="checkbox"></input></th>
+                  <th>#</th>
                   <th><strong>Name</strong></th>
                   <th><strong>Designation</strong></th>
                   <th><strong>Company</strong></th>
