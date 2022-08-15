@@ -20,6 +20,7 @@ function Signup() {
         data:signupdata
       }).then((res)=>{
         console.log(res)
+        alert("user added successfully")
         Navigate("/")
       }).catch((err)=>{
         console.log(err);
