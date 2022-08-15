@@ -27,6 +27,7 @@ router.post("/signup", (req, res)=>{
 
 //login route
 router.post("/login", (req, res)=>{
+    //console.log(req.body)
     userModal.find({email:req.body.email}).then((data=>{
         if(data.length){
             bcrypt.compare(req.body.password, data[0].password).then((value)=>{
