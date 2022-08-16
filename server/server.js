@@ -10,7 +10,7 @@ const jwt=require("jsonwebtoken")
 
 const app=express();
 //creating server
-app.listen(3001, (err)=>{
+app.listen(process.env.PORT || 3001, (err)=>{
     if(!err){
         console.log("server created successfully")
     }else{

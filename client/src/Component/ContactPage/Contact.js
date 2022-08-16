@@ -155,7 +155,9 @@ function Contact() {
                     <td><strong>{data.designation}</strong></td>
                     <td><strong>{data.company}</strong></td>
                     <td><strong>{data.industry}</strong></td>
-                    <td><strong>{data.email}</strong></td>
+                    <td><strong  data-toggle="tooltip" data-placement="bottom" title={data.email}>
+                      {data.email}
+                    </strong></td>
                     <td><strong>{data.phonenumber}</strong></td>
                     <td><strong>{data.country}</strong></td>
                     <td><strong><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-fill" viewBox="0 0 16 16">
