@@ -23,12 +23,6 @@ router.post("/add", async (req, res)=>{
     await data.forEach((element)=>{
         createContact(element,user_email)
     })
-    // const user_email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
-    // ContactModal.create({user_email:user_email,name:data.name, designation: data.designation, company:data.company, industry: data.industry, email:data.email, phonenumber:data.phonenumber, country:data.country}).then(()=>{
-    //     res.status(200).send("Post created successfully")
-    // }).catch((err)=>{
-    //     res.status(400).send(err)
-    // })
     res.end()
 });
 
