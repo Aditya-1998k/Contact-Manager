@@ -17,33 +17,25 @@ router.get("/get",async (req,res)=>{
 
 
 
-router.post("/add", (req, res)=>{
-    const data=req.body[0]
-    const user_email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
-    ContactModal.create({user_email:user_email,name:data.name, designation: data.designation, company:data.company, industry: data.industry, email:data.email, phonenumber:data.phonenumber, country:data.country}).then(()=>{
-        res.status(200).send("Post created successfully")
-    }).catch((err)=>{
-        res.status(400).send(err)
+router.post("/add", async (req, res)=>{
+    const data=req.body;
+    const user_email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY)
+    await data.forEach((element)=>{
+        createContact(element,user_email)
     })
-    // data.forEach((element)=>{
-    //     console.log(element.name);
-    //     ContactModal.create({user_email:user_email,name:element.name, designation: element.designation, company:element.company, industry: element.industry, email:element.email, phonenumber:element.phonenumber, country:element.country}).then((res)=>{
-    //         res.write()
-    //     }).then((err)=>{
-    //         res.status(400).send(err)
-    // //     })
-    // }
-    
-    // )
-    // res.end()
     // const user_email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
-    // ContactModal.create({user_email:user_email,name:req.body.name, designation: req.body.designation, company:req.body.company, industry: req.body.industry, email:req.body.email, phonenumber:req.body.phonenumber, country:req.body.country}).then(()=>{
+    // ContactModal.create({user_email:user_email,name:data.name, designation: data.designation, company:data.company, industry: data.industry, email:data.email, phonenumber:data.phonenumber, country:data.country}).then(()=>{
     //     res.status(200).send("Post created successfully")
     // }).catch((err)=>{
     //     res.status(400).send(err)
     // })
+    res.end()
 });
 
+const createContact=async (data,user_email)=>{
+       await ContactModal.create({user_email:user_email,name:data.name, designation: data.designation, company:data.company, industry: data.industry, email:data.email, phonenumber:data.phonenumber, country:data.country})
+    
+}
 
 router.post("/delete", (req, res)=>{
     const id=req.body.id;

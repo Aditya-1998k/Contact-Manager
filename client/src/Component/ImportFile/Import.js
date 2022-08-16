@@ -50,6 +50,7 @@ function Import(){
                     console.log(err)
                 })
                 navigate("/contact")
+                alert("Contact Added Successfully")
             })
             }}   
             >
